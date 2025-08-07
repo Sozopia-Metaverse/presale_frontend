@@ -1,0 +1,125 @@
+{
+  "navigation": {
+    "features": "Features",
+    "tokenomics": "Tokenomics",
+    "roadmap": "Roadmap",
+    "faq": "FAQ",
+    "buyNow": "Buy Now"
+  },
+  "hero": {
+    "title": "The Next Evolution of Dogecoin",
+    "subtitle": "DOGE2.0 combines the beloved meme culture of Dogecoin with cutting-edge blockchain technology, offering staking rewards, eco-friendly mining, and a vibrant community-driven ecosystem.",
+    "buyButton": "BUY $DOGE20",
+    "whitepaperButton": "Read Whitepaper",
+    "stats": {
+      "totalSupply": "Total Supply",
+      "stakingApy": "Staking APY",
+      "holders": "Holders",
+      "burned": "Burned"
+    }
+  },
+  "features": {
+    "title": "Why Choose DOGE2.0?",
+    "subtitle": "Built for the future with community at its heart",
+    "stakingRewards": {
+      "title": "Staking Rewards",
+      "description": "Earn passive income with our high-yield staking protocol. Lock your tokens and watch them grow."
+    },
+    "ecoFriendly": {
+      "title": "Eco-Friendly",
+      "description": "Proof of Stake consensus mechanism that's 99% more energy efficient than traditional mining."
+    },
+    "community": {
+      "title": "Community Driven",
+      "description": "Governed by the community, for the community. Every holder has a voice in our future."
+    }
+  },
+  "tokenomics": {
+    "title": "Tokenomics",
+    "subtitle": "Fair distribution designed for long-term growth",
+    "publicSale": "Public Sale",
+    "staking": "Staking Rewards",
+    "liquidity": "Liquidity",
+    "marketing": "Marketing",
+    "team": "Team"
+  },
+  "roadmap": {
+    "title": "Roadmap",
+    "subtitle": "Our journey to the moon and beyond",
+    "phase1": {
+      "title": "Phase 1: Launch",
+      "items": [
+        "Token Launch",
+        "Website & Social Media",
+        "Community Building",
+        "First Exchange Listings"
+      ]
+    },
+    "phase2": {
+      "title": "Phase 2: Growth",
+      "items": [
+        "Staking Platform Launch",
+        "Major Exchange Listings",
+        "Partnership Announcements",
+        "Mobile App Development"
+      ]
+    },
+    "phase3": {
+      "title": "Phase 3: Expansion",
+      "items": [
+        "DeFi Integrations",
+        "NFT Marketplace",
+        "Cross-chain Bridge",
+        "Metaverse Integration"
+      ]
+    },
+    "phase4": {
+      "title": "Phase 4: Ecosystem",
+      "items": [
+        "DAO Governance",
+        "Developer Grants",
+        "Enterprise Partnerships",
+        "Global Adoption"
+      ]
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about DOGE2.0",
+    "questions": {
+      "whatIs": {
+        "question": "What is DOGE2.0?",
+        "answer": "DOGE2.0 is the next evolution of the beloved Dogecoin, built on modern blockchain technology with enhanced features like staking, eco-friendly consensus, and community governance."
+      },
+      "howToBuy": {
+        "question": "How can I buy DOGE2.0?",
+        "answer": "You can buy DOGE2.0 through our website during the presale, or on supported exchanges once we go live. Make sure to use only official channels to avoid scams."
+      },
+      "staking": {
+        "question": "How does staking work?",
+        "answer": "Staking allows you to lock your DOGE2.0 tokens and earn rewards. Simply connect your wallet to our staking platform, choose your staking period, and start earning passive income."
+      },
+      "roadmap": {
+        "question": "What's on the roadmap?",
+        "answer": "Our roadmap includes launching the staking platform, getting listed on major exchanges, developing a mobile app, creating DeFi integrations, and building a complete ecosystem around DOGE2.0."
+      }
+    }
+  },
+  "footer": {
+    "description": "Join the DOGE2.0 revolution and be part of the future of meme coins.",
+    "quickLinks": "Quick Links",
+    "community": "Community",
+    "legal": "Legal",
+    "whitepaper": "Whitepaper",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "allRightsReserved": "All rights reserved."
+  },
+  "common": {
+    "language": "Language",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "close": "Close"
+  }
+}

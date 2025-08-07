@@ -1,0 +1,125 @@
+{
+  "navigation": {
+    "features": "Características",
+    "tokenomics": "Tokenómica",
+    "roadmap": "Hoja de Ruta",
+    "faq": "Preguntas Frecuentes",
+    "buyNow": "Comprar Ahora"
+  },
+  "hero": {
+    "title": "La Próxima Evolución de Dogecoin",
+    "subtitle": "DOGE2.0 combina la querida cultura de memes de Dogecoin con tecnología blockchain de vanguardia, ofreciendo recompensas de staking, minería ecológica y un ecosistema vibrante impulsado por la comunidad.",
+    "buyButton": "COMPRAR $DOGE20",
+    "whitepaperButton": "Leer Whitepaper",
+    "stats": {
+      "totalSupply": "Suministro Total",
+      "stakingApy": "APY de Staking",
+      "holders": "Poseedores",
+      "burned": "Quemados"
+    }
+  },
+  "features": {
+    "title": "¿Por qué Elegir DOGE2.0?",
+    "subtitle": "Construido para el futuro con la comunidad en su corazón",
+    "stakingRewards": {
+      "title": "Recompensas de Staking",
+      "description": "Gana ingresos pasivos con nuestro protocolo de staking de alto rendimiento. Bloquea tus tokens y míralos crecer."
+    },
+    "ecoFriendly": {
+      "title": "Eco-Amigable",
+      "description": "Mecanismo de consenso Proof of Stake que es 99% más eficiente energéticamente que la minería tradicional."
+    },
+    "community": {
+      "title": "Impulsado por la Comunidad",
+      "description": "Gobernado por la comunidad, para la comunidad. Cada poseedor tiene voz en nuestro futuro."
+    }
+  },
+  "tokenomics": {
+    "title": "Tokenómica",
+    "subtitle": "Distribución justa diseñada para el crecimiento a largo plazo",
+    "publicSale": "Venta Pública",
+    "staking": "Recompensas de Staking",
+    "liquidity": "Liquidez",
+    "marketing": "Marketing",
+    "team": "Equipo"
+  },
+  "roadmap": {
+    "title": "Hoja de Ruta",
+    "subtitle": "Nuestro viaje a la luna y más allá",
+    "phase1": {
+      "title": "Fase 1: Lanzamiento",
+      "items": [
+        "Lanzamiento del Token",
+        "Sitio Web y Redes Sociales",
+        "Construcción de Comunidad",
+        "Primeros Listados en Exchanges"
+      ]
+    },
+    "phase2": {
+      "title": "Fase 2: Crecimiento",
+      "items": [
+        "Lanzamiento de Plataforma de Staking",
+        "Listados en Exchanges Principales",
+        "Anuncios de Alianzas",
+        "Desarrollo de App Móvil"
+      ]
+    },
+    "phase3": {
+      "title": "Fase 3: Expansión",
+      "items": [
+        "Integraciones DeFi",
+        "Marketplace de NFT",
+        "Puente Cross-chain",
+        "Integración al Metaverso"
+      ]
+    },
+    "phase4": {
+      "title": "Fase 4: Ecosistema",
+      "items": [
+        "Gobernanza DAO",
+        "Subvenciones para Desarrolladores",
+        "Alianzas Empresariales",
+        "Adopción Global"
+      ]
+    }
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "subtitle": "Todo lo que necesitas saber sobre DOGE2.0",
+    "questions": {
+      "whatIs": {
+        "question": "¿Qué es DOGE2.0?",
+        "answer": "DOGE2.0 es la próxima evolución del querido Dogecoin, construido sobre tecnología blockchain moderna con características mejoradas como staking, consenso ecológico y gobernanza comunitaria."
+      },
+      "howToBuy": {
+        "question": "¿Cómo puedo comprar DOGE2.0?",
+        "answer": "Puedes comprar DOGE2.0 a través de nuestro sitio web durante la preventa, o en exchanges compatibles una vez que estemos activos. Asegúrate de usar solo canales oficiales para evitar estafas."
+      },
+      "staking": {
+        "question": "¿Cómo funciona el staking?",
+        "answer": "El staking te permite bloquear tus tokens DOGE2.0 y ganar recompensas. Simplemente conecta tu billetera a nuestra plataforma de staking, elige tu período de staking y comienza a ganar ingresos pasivos."
+      },
+      "roadmap": {
+        "question": "¿Qué hay en la hoja de ruta?",
+        "answer": "Nuestra hoja de ruta incluye lanzar la plataforma de staking, cotizar en exchanges principales, desarrollar una app móvil, crear integraciones DeFi y construir un ecosistema completo alrededor de DOGE2.0."
+      }
+    }
+  },
+  "footer": {
+    "description": "Únete a la revolución DOGE2.0 y sé parte del futuro de las meme coins.",
+    "quickLinks": "Enlaces Rápidos",
+    "community": "Comunidad",
+    "legal": "Legal",
+    "whitepaper": "Whitepaper",
+    "privacyPolicy": "Política de Privacidad",
+    "termsOfService": "Términos de Servicio",
+    "allRightsReserved": "Todos los derechos reservados."
+  },
+  "common": {
+    "language": "Idioma",
+    "loading": "Cargando...",
+    "error": "Ocurrió un error",
+    "retry": "Reintentar",
+    "close": "Cerrar"
+  }
+}

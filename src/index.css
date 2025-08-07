@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Crypto/Meme Coin Design System - Green Theme */
+
+@layer base {
+  :root {
+    /* White background with green accents */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 15%;
+
+    --card: 0 0% 98%;
+    --card-foreground: 240 10% 15%;
+
+    --popover: 0 0% 98%;
+    --popover-foreground: 240 10% 15%;
+
+    /* Green primary colors */
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 142 69% 58%;
+
+    /* Emerald accent for buttons and highlights */
+    --secondary: 160 84% 39%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 160 84% 39%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 142 76% 36%;
+
+    --radius: 0.75rem;
+
+    /* Custom green gradients */
+    --gradient-golden: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 69% 58%));
+    --gradient-golden-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 40% 96%));
+    --gradient-hero: linear-gradient(135deg, hsl(142 76% 36%) 0%, hsl(142 69% 58%) 50%, hsl(160 84% 39%) 100%);
+    
+    /* Green gradients for accents */
+    --gradient-purple: linear-gradient(135deg, hsl(160 84% 39%), hsl(167 80% 42%));
+    
+    /* Shadows with green glow */
+    --shadow-golden: 0 10px 30px -10px hsl(142 76% 36% / 0.2);
+    --shadow-golden-strong: 0 20px 40px -10px hsl(142 76% 36% / 0.3);
+    --shadow-purple: 0 10px 30px -10px hsl(160 84% 39% / 0.2);
+    
+    /* Smooth animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    background: white;
+  }
+}
+
+@layer components {
+  .gradient-golden {
+    background: var(--gradient-golden);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-purple {
+    background: var(--gradient-purple);
+  }
+  
+  .shadow-golden {
+    box-shadow: var(--shadow-golden);
+  }
+  
+  .shadow-golden-strong {
+    box-shadow: var(--shadow-golden-strong);
+  }
+  
+  .shadow-purple {
+    box-shadow: var(--shadow-purple);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+  
+  .crypto-card {
+    @apply bg-card/80 backdrop-blur-sm rounded-2xl border border-border/50 shadow-golden transition-smooth;
+  }
+  
+  .crypto-card:hover {
+    @apply shadow-golden-strong transform scale-105;
+  }
+}
