@@ -39,7 +39,7 @@ const HeroSection = () => {
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 max-w-4xl mx-auto">
             {[
-              { label: t("hero.stats.totalSupply"), value: "140B" },
+              { label: t("hero.stats.totalSupply"), value: "1B" },
               { label: t("hero.stats.stakingApy"), value: "120%" },
               { label: t("hero.stats.holders"), value: "25K+" },
               { label: t("hero.stats.burned"), value: "10M+" }

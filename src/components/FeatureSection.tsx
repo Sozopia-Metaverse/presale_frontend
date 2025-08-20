@@ -39,7 +39,7 @@ const FeatureSection = () => {
                 <img 
                   src={feature.image} 
                   alt={feature.title}
-                  className="w-64 h-64 object-contain transition-transform hover:scale-110 duration-300"
+                  className="w-80 h-80 object-contain transition-transform hover:scale-110 duration-300"
                 />
                 <div className="absolute -inset-4 gradient-golden opacity-20 rounded-full blur-xl" />
               </div>

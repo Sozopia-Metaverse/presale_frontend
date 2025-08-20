@@ -1,4 +1,5 @@
 import { Twitter, MessageCircle, Send } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   const socialLinks = [
@@ -33,10 +34,17 @@ const Footer = () => {
           {/* Logo and Description */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-full gradient-golden flex items-center justify-center">
-                <span className="text-white font-bold">🐕</span>
-              </div>
-              <span className="text-xl font-bold">Dogecoin20</span>
+            <div className="flex items-center space-x-3">
+    <img
+      src={logo}
+      alt="Sozopia"
+      className="w-8 h-auto rounded-lg"
+    />
+    <div className="text-2xl font-bold text-green-600 font-enigmatic translate-y-1">
+      <span>Sozo</span>
+      <span className="text-secondary">pia</span>
+    </div>
+  </div>
             </div>
             <p className="text-background/70 mb-6 leading-relaxed">
               The next evolution of meme coins with real utility, staking rewards, and a deflationary mechanism.
@@ -80,7 +88,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-background/20 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-background/60 text-sm">
-            © 2024 Dogecoin20. All rights reserved.
+            © 2024 Sozopia. All rights reserved.
           </p>
           <p className="text-background/60 text-sm">
             🐕 Built with love for the doge community

@@ -7,9 +7,9 @@
     "buyNow": "Buy Now"
   },
   "hero": {
-    "title": "The Next Evolution of Dogecoin",
-    "subtitle": "DOGE2.0 combines the beloved meme culture of Dogecoin with cutting-edge blockchain technology, offering staking rewards, eco-friendly mining, and a vibrant community-driven ecosystem.",
-    "buyButton": "BUY $DOGE20",
+    "title": "The Next Evolution of Sozopia",
+    "subtitle": "SOZOPIA combines the beloved meme culture of Sozopia with cutting-edge blockchain technology, offering staking rewards, eco-friendly mining, and a vibrant community-driven ecosystem.",
+    "buyButton": "BUY $SOZIA",
     "whitepaperButton": "Read Whitepaper",
     "stats": {
       "totalSupply": "Total Supply",
@@ -19,7 +19,7 @@
     }
   },
   "features": {
-    "title": "Why Choose DOGE2.0?",
+    "title": "Why Choose SOZOPIA?",
     "subtitle": "Built for the future with community at its heart",
     "stakingRewards": {
       "title": "Staking Rewards",
@@ -85,28 +85,28 @@
   },
   "faq": {
     "title": "Frequently Asked Questions",
-    "subtitle": "Everything you need to know about DOGE2.0",
+    "subtitle": "Everything you need to know about SOZOPIA",
     "questions": {
       "whatIs": {
-        "question": "What is DOGE2.0?",
-        "answer": "DOGE2.0 is the next evolution of the beloved Dogecoin, built on modern blockchain technology with enhanced features like staking, eco-friendly consensus, and community governance."
+        "question": "What is SOZOPIA?",
+        "answer": "SOZOPIA is the next evolution of the beloved Sozopia, built on modern blockchain technology with enhanced features like staking, eco-friendly consensus, and community governance."
       },
       "howToBuy": {
-        "question": "How can I buy DOGE2.0?",
-        "answer": "You can buy DOGE2.0 through our website during the presale, or on supported exchanges once we go live. Make sure to use only official channels to avoid scams."
+        "question": "How can I buy SOZOPIA?",
+        "answer": "You can buy SOZOPIA through our website during the presale, or on supported exchanges once we go live. Make sure to use only official channels to avoid scams."
       },
       "staking": {
         "question": "How does staking work?",
-        "answer": "Staking allows you to lock your DOGE2.0 tokens and earn rewards. Simply connect your wallet to our staking platform, choose your staking period, and start earning passive income."
+        "answer": "Staking allows you to lock your SOZOPIA tokens and earn rewards. Simply connect your wallet to our staking platform, choose your staking period, and start earning passive income."
       },
       "roadmap": {
         "question": "What's on the roadmap?",
-        "answer": "Our roadmap includes launching the staking platform, getting listed on major exchanges, developing a mobile app, creating DeFi integrations, and building a complete ecosystem around DOGE2.0."
+        "answer": "Our roadmap includes launching the staking platform, getting listed on major exchanges, developing a mobile app, creating DeFi integrations, and building a complete ecosystem around SOZOPIA."
       }
     }
   },
   "footer": {
-    "description": "Join the DOGE2.0 revolution and be part of the future of meme coins.",
+    "description": "Join the SOZOPIA revolution and be part of the future of meme coins.",
     "quickLinks": "Quick Links",
     "community": "Community",
     "legal": "Legal",

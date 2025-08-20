@@ -5,6 +5,7 @@ import TokenomicsSection from "@/components/TokenomicsSection";
 import RoadmapSection from "@/components/RoadmapSection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
+import Roadmap from "@/components/Roadmap";
 
 const Index = () => {
   return (
@@ -14,7 +15,8 @@ const Index = () => {
         <HeroSection />
         <FeatureSection />
         <TokenomicsSection />
-        <RoadmapSection />
+        {/* <RoadmapSection /> */}
+        <Roadmap />
         <FAQSection />
       </main>
       <Footer />
