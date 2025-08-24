@@ -1,114 +1,19 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import {  Pie, Cell, ResponsiveContainer, Legend } from "recharts";
-
-const PieChart = () => {
-  const data = [
-    { name: "Public Sale", percentage: 20.0, color: "#E6E6FA" },
-    { name: "Team", percentage: 10.0, color: "#90EE90" },
-    { name: "Advisors", percentage: 9.0, color: "#FFB6C1" },
-    { name: "Staking/Rewards Pool", percentage: 26.0, color: "#FFD700" },
-    { name: "Community", percentage: 25.0, color: "#87CEEB" },
-    { name: "Marketing & Partnerships", percentage: 10.0, color: "#FFC0CB" },
-  ];
-
-  const total = data.reduce((sum, item) => sum + item.percentage, 0);
-  let currentAngle = 0;
-
-  return (
-    <div className="mb-6 sm:mb-8">
-      <h3 className="text-lg sm:text-xl font-bold text-black mb-4 sm:mb-6 text-center">
-        Token Allocation Distribution
-      </h3>
-      <div className="flex justify-center">
-        {/* Responsive pie chart */}
-        <div className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] lg:w-[444px] lg:h-[444px]">
-          <svg 
-            width="100%" 
-            height="100%" 
-            viewBox="0 0 444 444" 
-            className="transform -rotate-90"
-            preserveAspectRatio="xMidYMid meet"
-          >
-            {data.map((item, index) => {
-              const angle = (item.percentage / total) * 360;
-              const startAngle = currentAngle;
-              const endAngle = currentAngle + angle;
-              
-              const x1 = 222 + 150 * Math.cos((startAngle * Math.PI) / 180);
-              const y1 = 222 + 150 * Math.sin((startAngle * Math.PI) / 180);
-              const x2 = 222 + 150 * Math.cos((endAngle * Math.PI) / 180);
-              const y2 = 222 + 150 * Math.sin((endAngle * Math.PI) / 180);
-              
-              const largeArcFlag = angle > 180 ? 1 : 0;
-              
-              const pathData = [
-                `M 222 222`,
-                `L ${x1} ${y1}`,
-                `A 150 150 0 ${largeArcFlag} 1 ${x2} ${y2}`,
-                `Z`
-              ].join(' ');
-              
-              const midAngle = (startAngle + endAngle) / 2;
-              const textRadius = 85;
-              const textX = 222 + textRadius * Math.cos((midAngle * Math.PI) / 180);
-              const textY = 222 + textRadius * Math.sin((midAngle * Math.PI) / 180);
-              
-              const labelRadius = 185;
-              const labelX = 222 + labelRadius * Math.cos((midAngle * Math.PI) / 180);
-              const labelY = 222 + labelRadius * Math.sin((midAngle * Math.PI) / 180);
-              
-              const textRotation = midAngle + 90;
-              
-              currentAngle += angle;
-              
-              return (
-                <g key={index}>
-                  <path
-                    d={pathData}
-                    fill={item.color}
-                    stroke="white"
-                    strokeWidth="3"
-                  />
-                  <text
-                    x={textX}
-                    y={textY}
-                    textAnchor="middle"
-                    dominantBaseline="middle"
-                    transform={`rotate(${textRotation} ${textX} ${textY})`}
-                    className="font-bold fill-black"
-                    style={{ fontSize: 'clamp(12px, 2vw, 16px)', fontWeight: 'bold' }}
-                  >
-                    {item.percentage}%
-                  </text>
-                  <text
-                    x={labelX}
-                    y={labelY}
-                    textAnchor="middle"
-                    dominantBaseline="middle"
-                    transform={`rotate(90 ${labelX} ${labelY})`}
-                    className="font-medium fill-black"
-                    style={{ fontSize: 'clamp(10px, 1.5vw, 14px)', fontWeight: '500' }}
-                  >
-                    {item.name}
-                  </text>
-                </g>
-              );
-            })}
-          </svg>
-        </div>
-      </div>
-    </div>
-  );
-};
+import { useState } from 'react';
+import { PieChart } from 'react-minimal-pie-chart';
+import background from "../assets/tokenomic.png"
+import woodmaterial from "../assets/woodmaterial.png"
 
 const TokenomicsSection = () => {
+  const [selectedSegment, setSelectedSegment] = useState<number | null>(null);
+
   const tokenomicsData = [
-    { name: "Staking/Rewards Pool", value: 26, color: "#F59E0B" },
-    { name: "Community", value: 25, color: "#8B5CF6" },
-    { name: "Public Sale", value: 20, color: "#10B981" },
-    { name: "Marketing & Partnerships", value: 10, color: "#EF4444" },
-    { name: "Team", value: 10, color: "#3B82F6" },
-    { name: "Advisors", value: 9, color: "#EC4899" }
+    { title: "Staking/Rewards Pool", value: 26, color: "#F59E0B" },
+    { title: "Community", value: 25, color: "#8B5CF6" },
+    { title: "Public Sale", value: 20, color: "#10B981" },
+    { title: "Marketing & Partnerships", value: 10, color: "#EF4444" },
+    { title: "Team", value: 10, color: "#3B82F6" },
+    { title: "Advisors", value: 9, color: "#EC4899" }
   ];
 
   const tokenInfo = [
@@ -119,57 +24,153 @@ const TokenomicsSection = () => {
     { label: "Contract", value: "0x..." }
   ];
 
+  const handleSegmentHover = (event: any, dataIndex: number) => {
+    setSelectedSegment(dataIndex);
+  };
+
+  const handleSegmentLeave = () => {
+    setSelectedSegment(null);
+  };
+
+  const getSelectedData = () => {
+    if (selectedSegment === null) return null;
+    return tokenomicsData[selectedSegment];
+  };
+
   return (
-    <section id="tokenomics" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+    <section 
+      id="tokenomics" 
+      className="py-20 relative overflow-hidden"
+    >
+      {/* Enhanced Background with Multiple Layers - Matching HeroSection */}
+      <div className="absolute inset-0">
+        {/* Professional gradient overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/60 via-slate-800/40 to-slate-900/60" />
+        
+        {/* Animated gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/5 via-transparent to-blue-500/5 animate-pulse" />
+        
+        {/* Additional professional overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+        
+        {/* Jungle/Forest Background Base */}
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-950 via-green-900 to-emerald-800" />
+        
+        {/* Forest Canopy Effect */}
+        <div className="absolute inset-0 bg-gradient-to-t from-green-950/40 via-transparent to-emerald-900/30" />
+        
+        {/* Jungle Atmosphere - Moss and Earth Tones */}
+        <div className="absolute inset-0 bg-gradient-to-br from-green-800/20 via-emerald-700/15 to-green-900/25" />
+        
+        {/* Subtle Forest Texture */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(34,197,94,0.1),transparent_40%),radial-gradient(circle_at_70%_30%,rgba(16,185,129,0.08),transparent_40%)]" />
+        
+        {/* Jungle Mist Effect */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-green-900/5 to-emerald-950/10" />
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-foreground mb-6">TOKENOMICS</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-5xl font-bold font-pinewood text-white mb-6 drop-shadow-lg">TOKENOMICS</h2>
+          <p className="text-xl text-white/90 max-w-2xl mx-auto drop-shadow-md">
             A carefully designed token economy that rewards holders and ensures long-term sustainability
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Pie Chart */}
-          <div className="crypto-card h-full p-8">
-            <h3 className="text-2xl font-bold text-center mb-8">Token Distribution</h3>
-            <div className="h-80">
-              <ResponsiveContainer width="100%" height="100%">
-                <PieChart>
-                  <Pie
-                    data={tokenomicsData}
-                    cx="50%"
-                    cy="50%"
-                    outerRadius={100}
-                    innerRadius={40}
-                    dataKey="value"
-                    label={({ value }) => `${value}%`}
-                  >
-                    {tokenomicsData.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={entry.color} />
-                    ))}
-                  </Pie>
-                  <Legend />
-                </PieChart>
-              </ResponsiveContainer>
+          <div 
+            className="relative h-full py-8 px-20"
+          >
+            <img src={woodmaterial} alt="woodmaterial" className="absolute top-0 left-0 w-full h-full scale-x-[1.2] scale-y-[1.5] object-cover" width={800} height={800} />
+            <h3 className="relative text-2xl font-bold text-center my-8 z-10 text-white drop-shadow-md">Token Distribution</h3>
+            <div className="relative z-10 flex justify-center items-center h-80">
+              <div className="w-full max-w-md flex justify-center items-center">
+                <PieChart
+                  data={tokenomicsData}
+                  // label={({ dataEntry }) => `${dataEntry.value}%`}
+                  labelStyle={{
+                    fontSize: '12px',
+                    fontFamily: 'sans-serif',
+                    fontWeight: 'bold',
+                    fill: '#ffffff'
+                  }}
+                  className='scale-75'
+                  viewBoxSize={[150, 150]}
+                  center={[75, 75]}
+                  labelPosition={50}
+                  // lineWidth={40}
+                  paddingAngle={2}
+                  animate
+                  animationDuration={1000}
+                  animationEasing="ease-out"
+                  onMouseOver={handleSegmentHover}
+                  onMouseOut={handleSegmentLeave}
+                  segmentsStyle={{
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease'
+                  }}
+                  segmentsShift={(index) => 
+                    selectedSegment === index ? 5 : 0
+                  }
+                />
+              </div>
+            </div>
+            
+            {/* Interactive Legend */}
+            <div className="relative z-10 mt-2 grid grid-cols-2 gap-2 text-sm">
+              {tokenomicsData.map((entry, index) => (
+                <div
+                  key={index} 
+                  className={`flex items-center justify-between p-2 rounded cursor-pointer transition-all duration-200 ${
+                    selectedSegment === index
+                      ? 'bg-white/20 backdrop-blur-sm border border-white/30 shadow-md'
+                      : 'hover:bg-white/10'
+                  }`}
+                  onMouseEnter={() => setSelectedSegment(index)}
+                  onMouseLeave={() => setSelectedSegment(null)}
+                >
+                  <div className="flex items-center space-x-2">
+                    <div 
+                      className={`w-3 h-3 rounded-full transition-transform duration-200 ${
+                        selectedSegment === index ? 'scale-125' : ''
+                      }`}
+                      style={{ backgroundColor: entry.color }}
+                    ></div>
+                    <span className={`font-medium ${
+                      selectedSegment === index ? 'text-white font-bold' : 'text-white/90'
+                    }`}>
+                      {entry.title}
+                    </span>
+                  </div>
+                  <span className={`font-bold ${
+                    selectedSegment === index ? 'text-white' : 'text-white'
+                  }`}>
+                    {entry.value}%
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
 
           {/* Token Info */}
-          <div className="crypto-card p-8">
-            <h3 className="text-2xl font-bold mb-8">Token Information</h3>
-            <div className="space-y-6">
+          <div 
+            className="relative py-8 px-20"
+          >
+            <img src={woodmaterial} alt="woodmaterial" className="absolute top-0 left-0 w-full h-full scale-x-[1.2] scale-y-[1.5] object-cover" width={800} height={800} />
+            <h3 className="relative text-2xl text-center font-bold my-8 z-10 text-white drop-shadow-md">Token Information</h3>
+            <div className="relative space-y-6 z-10">
               {tokenInfo.map((info, index) => (
-                <div key={index} className="flex justify-between items-center py-3 border-b border-border/30">
-                  <span className="text-muted-foreground font-medium">{info.label}</span>
-                  <span className="text-foreground font-bold">{info.value}</span>
+                <div key={index} className="flex justify-between items-center py-3 border-b border-white/30">
+                  <span className="text-white/80 font-medium">{info.label}</span>
+                  <span className="text-white font-bold">{info.value}</span>
                 </div>
               ))}
             </div>
             
-            <div className="mt-8 p-6 bg-muted/50 rounded-xl">
-              <h4 className="font-bold text-lg mb-3">Burn Mechanism</h4>
-              <p className="text-muted-foreground">
+            <div className="relative z-10 mt-2 p-4 bg-white/20 backdrop-blur-sm rounded-xl border border-white/30 shadow-lg">
+              <h4 className="font-bold text-lg mb-2 text-white">Burn Mechanism</h4>
+              <p className="text-white/90">
                 2% of every transaction is automatically burned, creating a deflationary pressure that increases token value over time.
               </p>
             </div>

@@ -17,7 +17,7 @@ const wagmiQueryClient = new WagmiQueryClient();
 const App = () => (
   <WagmiProvider config={config}>
     <QueryClientProvider client={wagmiQueryClient}>
-      <RainbowKitProvider>
+      <RainbowKitProvider modalSize="compact">
         <QueryClientProvider client={queryClient}>
           <TooltipProvider>
             <Toaster />

@@ -65,12 +65,12 @@ const Header = () => {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+    <header className={`fixed top-0 left-0 w-full z-[60] transition-all duration-300 ${
       isScrolled 
-        ? 'lg:top-4 lg:left-1/2 lg:-translate-x-1/2 lg:w-[85%] lg:rounded-2xl bg-background/95 backdrop-blur-xl border border-border/50 shadow-golden-strong' 
-        : 'lg:top-6 lg:left-1/2 lg:-translate-x-1/2 lg:w-[80%] lg:rounded-2xl bg-background/80 backdrop-blur-lg border-b border-border/50 shadow-lg'
+        ? 'lg:top-0 lg:left-1/2 lg:-translate-x-1/2 lg:w-screen lg:rounded-2xl bg-background/95 backdrop-blur-xl border border-border/50 shadow-golden-strong' 
+        : 'lg:top-0 lg:left-1/2 lg:-translate-x-1/2 lg:w-screen lg:rounded-2xl bg-background/80 backdrop-blur-lg border-b border-border/50 shadow-lg'
     }`}>
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-4 py-1">
         <div className="flex items-center justify-between">
           {/* Logo with enhanced styling */}
           <div className="flex items-center gap-3 group cursor-pointer transition-transform duration-300 hover:scale-105">

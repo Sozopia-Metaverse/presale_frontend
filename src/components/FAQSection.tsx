@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import character_faq from "@/assets/character_faq.png";
 
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -11,15 +12,15 @@ const FAQSection = () => {
     },
     {
       question: "How does staking work?",
-      answer: "Simply connect your wallet, deposit your $DOGE20 tokens into our staking pool, and start earning rewards immediately. You can unstake at any time with no lock-up periods."
+      answer: "Simply connect your wallet, deposit your $SOZIA tokens into our staking pool, and start earning rewards immediately. You can unstake at any time with no lock-up periods."
     },
     {
       question: "What makes Sozopia different?",
-      answer: "Unlike traditional meme coins, $DOGE20 features a deflationary burn mechanism, staking rewards up to 120% APY, and a roadmap focused on real utility and ecosystem growth."
+      answer: "Unlike traditional meme coins, $SOZIA features a deflationary burn mechanism, staking rewards up to 120% APY, and a roadmap focused on real utility and ecosystem growth."
     },
     {
       question: "How do I buy Sozopia?",
-      answer: "You can buy $DOGE20 on our website during the presale, or through decentralized exchanges like Uniswap once the token launches publicly."
+      answer: "You can buy $SOZIA on our website during the presale, or through decentralized exchanges like Uniswap once the token launches publicly."
     },
     {
       question: "Is Sozopia safe?",
@@ -32,10 +33,11 @@ const FAQSection = () => {
   ];
 
   return (
-    <section id="faq" className="py-20 bg-background">
+    <section id="faq" className="py-20 bg-background relative">
+      <img src={character_faq} alt="character_faq" className="absolute top-0 left-[15%] w-60 h-60 object-cover" width={800} height={800} />
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-foreground mb-6">FREQUENTLY ASKED QUESTIONS</h2>
+          <h2 className="text-5xl font-bold font-pinewood text-foreground mb-6">FREQUENTLY ASKED QUESTIONS</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Got questions? We've got answers! Learn everything you need to know about Sozopia.
           </p>

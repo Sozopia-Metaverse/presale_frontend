@@ -16,6 +16,26 @@
       "stakingApy": "Staking APY",
       "holders": "Holders",
       "burned": "Burned"
+    },
+    "presale": {
+      "title": "Upcoming Soon!",
+      "subtitle": "Don't miss out on the next big thing",
+      "status": "Status",
+      "live": "Coming Soon",
+      "ended": "ENDED",
+      "comingSoon": "COMING SOON",
+      "timeRemaining": "Time Remaining",
+      "totalRaised": "Total Raised",
+      "softCap": "Soft Cap",
+      "hardCap": "Hard Cap",
+      "tokenPrice": "Token Price",
+      "connectWallet": "Buy Now",
+      "buyTokens": "Buy Tokens",
+      "walletConnected": "Wallet Connected",
+      "days": "Days",
+      "hours": "Hours",
+      "minutes": "Minutes",
+      "seconds": "Seconds"
     }
   },
   "features": {
@@ -121,5 +141,82 @@
     "error": "An error occurred",
     "retry": "Retry",
     "close": "Close"
+  },
+  "howToBuy": {
+    "title": "How to Buy SOZOPIA",
+    "subtitle": "Follow these simple steps to join the SOZOPIA revolution and become part of our growing community.",
+    "presaleInfo": {
+      "title": "Presale Information",
+      "subtitle": "Current presale details and important information",
+      "tokenPrice": "Token Price",
+      "buyRange": "Buy Range",
+      "softCapHardCap": "Soft Cap / Hard Cap",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "status": "Status",
+      "liveNow": "Live Now"
+    },
+    "steps": {
+      "step1": {
+        "title": "Create a Wallet",
+        "description": "Download and set up a compatible wallet like MetaMask, Trust Wallet, or WalletConnect.",
+        "details": [
+          "Download MetaMask from metamask.io",
+          "Create a new wallet or import existing one",
+          "Secure your seed phrase in a safe location",
+          "Add the required network to your wallet"
+        ]
+      },
+      "step2": {
+        "title": "Get ETH or USDT",
+        "description": "Purchase ETH or USDT from a centralized exchange to swap for SOZOPIA tokens.",
+        "details": [
+          "Buy ETH/USDT from exchanges like Binance, Coinbase, or Kraken",
+          "Transfer to your wallet (ensure you have enough for gas fees)",
+          "Verify the transaction on the blockchain",
+          "Wait for confirmations before proceeding"
+        ]
+      },
+      "step3": {
+        "title": "Connect to Presale",
+        "description": "Visit our presale page and connect your wallet to participate in the token sale.",
+        "details": [
+          "Navigate to our presale page",
+          "Click 'Connect Wallet' button",
+          "Approve the connection request",
+          "Ensure you're on the correct network"
+        ]
+      },
+      "step4": {
+        "title": "Buy SOZOPIA Tokens",
+        "description": "Enter the amount you want to invest and complete your purchase.",
+        "details": [
+          "Enter the amount of ETH/USDT you want to spend",
+          "Review the token amount you'll receive",
+          "Click 'Buy Tokens' and confirm the transaction",
+          "Wait for transaction confirmation"
+        ]
+      }
+    },
+    "importantNotes": {
+      "title": "Important Notes",
+      "notes": [
+        "Only buy from official channels to avoid scams",
+        "Never share your private keys or seed phrase",
+        "Double-check contract addresses before transactions",
+        "Keep some ETH for gas fees",
+        "Join our community for support and updates"
+      ]
+    },
+    "cta": {
+      "title": "Ready to Join SOZOPIA?",
+      "subtitle": "Don't miss out on the next big thing in meme coins. Join our presale now!",
+      "joinPresale": "Join Presale Now",
+      "readWhitepaper": "Read Whitepaper",
+      "needHelp": "Need help? Join our community for support:",
+      "telegram": "Telegram",
+      "discord": "Discord",
+      "twitter": "Twitter"
+    }
   }
 }
