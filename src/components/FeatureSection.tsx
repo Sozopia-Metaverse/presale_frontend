@@ -1,6 +1,6 @@
-import character_stake from "@/assets/character_stake.png";
-import character_wallet from "@/assets/character_wallet.png";
-import character_inflation from "@/assets/character_inflation.png";
+import character_stake from "@/assets/character_stake.gif";
+import character_wallet from "@/assets/character_wallet.gif";
+import character_inflation from "@/assets/character_inflation.gif";
 import { Button } from "@/components/ui/button";
 import btn from "@/assets/btn.png";
 import bush from "@/assets/bush.png";
@@ -8,7 +8,7 @@ import Avatar from "@/assets/avatar.png";
 import Avatar2 from "@/assets/avatar2.png";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const FeatureSection = () => {
   const avatarRef = useRef<HTMLImageElement>(null);
@@ -17,6 +17,8 @@ const FeatureSection = () => {
   const bushRightRef = useRef<HTMLImageElement>(null);
   const learnMoreButtonRef = useRef<HTMLButtonElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
+  const [visibleFeatures, setVisibleFeatures] = useState<Set<number>>(new Set());
+  const featureRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
     // Register ScrollTrigger plugin
@@ -97,6 +99,30 @@ const FeatureSection = () => {
     };
   }, []);
 
+  // Lazy loading effect
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const index = featureRefs.current.findIndex(ref => ref === entry.target);
+          if (entry.isIntersecting && index !== -1) {
+            setVisibleFeatures(prev => new Set([...prev, index]));
+          }
+        });
+      },
+      { 
+        threshold: 0.1,
+        rootMargin: '50px' // Start loading 50px before the element comes into view
+      }
+    );
+
+    featureRefs.current.forEach(ref => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   const handleAvatarFocus = () => {
     if (avatarRef.current) {
       gsap.to(avatarRef.current, {
@@ -146,21 +172,14 @@ const FeatureSection = () => {
   return (
     <section ref={sectionRef} className="py-20 bg-background relative">
       <div className="container mx-auto max-w-7xl px-4 ">
-        <img 
-          ref={avatar2Ref}
-          src={Avatar2} 
-          alt="avatar2" 
-          className="absolute -top-[500px] rotate-[135deg] -left-[350px] scale-50 transition-all duration-500 ease-out z-10 hover:scale-60  cursor-pointer" 
-          width={800} 
-          height={800} 
-        />
+       
       <img 
         ref={bushLeftRef}
-        src={bush} 
-        alt="bush" 
+        src={bush}
+        alt="bush"
         className="absolute -bottom-0 rotate-[90deg] -left-[300px] hover:scale-105 transition-transform duration-300 z-50" 
-        width={800} 
-        height={800} 
+        width={800}
+        height={800}
       />
       <img 
         ref={avatarRef}
@@ -182,16 +201,29 @@ const FeatureSection = () => {
         height={800} 
       />
         {features.map((feature, index) => (
-          <div key={index} className={`flex flex-col ${feature.className} items-center gap-4 mb-20 last:mb-0`}>
+          <div 
+            key={index} 
+            ref={el => featureRefs.current[index] = el}
+            className={`flex flex-col ${feature.className} items-center gap-4 mb-20 last:mb-0`}
+          >
             {/* Image */}
             <div className="flex-1 flex justify-center">
               <div className="relative">
-                <img 
-                  src={feature.image} 
-                  alt={feature.title}
-                  className="w-96 h-96 object-contain transition-transform hover:scale-110 duration-300"
-                />
-                <div className="absolute -inset-4 gradient-golden opacity-20 rounded-full blur-xl" />
+                <div className="absolute -inset-4 w-36 top-0  -left-[100px] bg-gradient-to-l from-white/0 to-white z-10" />
+                {/* <div className="absolute -inset-4 w-36 top-0 -right-[500px] bg-gradient-to-r from-white/0 to-white z-10" /> */}
+                {visibleFeatures.has(index) ? (
+                  <img 
+                    src={feature.image}
+                    alt={feature.title}
+                    className="w-96 h-96 object-contain scale-150 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="w-96 h-96 bg-gradient-to-br from-gray-200 to-gray-300 animate-pulse rounded-lg flex items-center justify-center">
+                    <div className="text-gray-500 text-sm">Loading...</div>
+                  </div>
+                )}
+                <div className="absolute -inset-4 " />
               </div>
             </div>
             
