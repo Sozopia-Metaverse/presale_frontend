@@ -4,18 +4,21 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { useAccount } from "wagmi";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
+import { gsap } from "gsap";
 import heroImage from "@/assets/background.png";
 import miniWood from "@/assets/mini_wood.png";
 import woodPattern from "@/assets/woodenPanel.png";
 import woodButton from "@/assets/woodenBtn.png";
 import bush_round from "@/assets/bush_round.png";
 import character from "@/assets/character.png";
-import character2 from "@/assets/character_side.png";
+import character2 from "@/assets/character_side.gif";
+import willowleaf from "@/assets/willowleave.png";
 
 const HeroSection = () => {
   const { t } = useTranslation();
   const { isConnected } = useAccount();
+  const willowLeafRef = useRef<HTMLImageElement>(null);
   
   // Presale data - you can replace these with real data from your smart contract
   const [timeRemaining, setTimeRemaining] = useState({
@@ -93,14 +96,32 @@ const HeroSection = () => {
     return () => clearInterval(interval);
   }, []);
 
+
+  
+  
+  
+
   const progressPercentage = (presaleData.totalRaised / presaleData.hardCap) * 100;
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center ">
+    <section className="relative min-h-screen min-w-screen flex items-center justify-center overflow-hidden ">
       <img src={bush_round} alt="bush" className="absolute -bottom-[300px] -left-[450px] hover:scale-105 transition-transform duration-300 z-50" width={800} height={800} />
       <img src={bush_round} alt="bush" className="absolute -bottom-[450px] rotate-[180deg] -right-[450px] hover:scale-105 transition-transform duration-300 z-10" width={800} height={800} />
-      <img src={character2} alt="character2" className="absolute -bottom-1/3 scale-75 -left-[300px] hover:scale-[0.8] transition-transform duration-300 z-10" width={800} height={800} />
-      
+      <img src={character2} alt="character2" className="absolute -bottom-0 scale-125 -left-[300px] hover:scale-[0.8] transition-transform duration-300 z-10" width={800} height={800} />
+      <img 
+        ref={willowLeafRef}
+        src={willowleaf}
+        alt="willowleaf" 
+        className="absolute -top-[150px] rotate-[90deg] -left-[350px] scale-[0.3] animate-wind-shake-natural transition-transform duration-300 z-10" 
+        style={{
+          transformOrigin: 'top center',
+          animation: 'wind-shake-natural 8s ease-in-out infinite',
+        }}
+        width={800} 
+        height={800} 
+      />
+      <div className="absolute bottom-0 left-[300px] w-[300px] h-[600px] bg-gradient-to-r from-[#00482D]/0 to-[#00482D] z-10 "></div>
+      <div className="absolute bottom-[450px] left-0 w-[600px] h-[100px] bg-gradient-to-t from-[#00482D]/0 to-[#00482D] z-10 "></div>
       {/* Enhanced Background with Multiple Layers */}
       <div className="absolute inset-0">
         {/* Base background image with improved positioning and scaling */}
@@ -108,29 +129,18 @@ const HeroSection = () => {
           className="absolute inset-0"
         />
         
-        {/* Professional gradient overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/60 via-slate-800/40 to-slate-900/60" />
+        {/* Solid background color #00482D */}
+        <div className="absolute inset-0 bg-[#00482D]" />
         
-        {/* Animated gradient overlay */}
+        {/* Remove or comment out the gradient overlays for solid color */}
+        {/* <div className="absolute inset-0 bg-gradient-to-br from-slate-900/60 via-slate-800/40 to-slate-900/60" />
         <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/5 via-transparent to-blue-500/5 animate-pulse" />
-        
-        {/* Additional professional overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-        
-        {/* Jungle/Forest Background Base */}
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-950 via-green-900 to-emerald-800" />
-        
-        {/* Forest Canopy Effect */}
         <div className="absolute inset-0 bg-gradient-to-t from-green-950/40 via-transparent to-emerald-900/30" />
-        
-        {/* Jungle Atmosphere - Moss and Earth Tones */}
         <div className="absolute inset-0 bg-gradient-to-br from-green-800/20 via-emerald-700/15 to-green-900/25" />
-        
-        {/* Subtle Forest Texture */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(34,197,94,0.1),transparent_40%),radial-gradient(circle_at_70%_30%,rgba(16,185,129,0.08),transparent_40%)]" />
-        
-        {/* Jungle Mist Effect */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-green-900/5 to-emerald-950/10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-green-900/5 to-emerald-950/10" /> */}
       </div>
 
       {/* Content */}
@@ -164,7 +174,11 @@ const HeroSection = () => {
 
           {/* Right Side - Wooden Signboard Presale Status Panel */}
           <div className=" lg:w-auto max-w-2xl">
-            <div className="bg-cover  -translate-y-12 bg-center z-30 relative bg-no-repeat animate-fall-in" >
+            <div className="bg-cover  -translate-y-12 bg-center z-30 relative bg-no-repeat animate-fall-in animate-wind-shake-natural" 
+                 style={{
+                   transformOrigin: 'top center',
+                   animation: 'wind-shake-natural 8s ease-in-out infinite'
+                 }}>
               <img src={woodPattern} alt="woodPattern" className="absolute top-0 left-0 w-full h-full object-cover scale-x-[1.8] scale-y-[2.7]" />
               <div className="p-6 translate-y-28">
                 {/* Wooden Header Section */}
