@@ -104,15 +104,15 @@ const HeroSection = () => {
   const progressPercentage = (presaleData.totalRaised / presaleData.hardCap) * 100;
 
   return (
-    <section className="relative min-h-screen min-w-screen flex items-center justify-center overflow-hidden ">
-      <img src={bush_round} alt="bush" className="absolute -bottom-[300px] -left-[450px] hover:scale-105 transition-transform duration-300 z-50" width={800} height={800} />
-      <img src={bush_round} alt="bush" className="absolute -bottom-[450px] rotate-[180deg] -right-[450px] hover:scale-105 transition-transform duration-300 z-10" width={800} height={800} />
-      <img src={character2} alt="character2" className="absolute -bottom-0 scale-125 -left-[300px] hover:scale-[0.8] transition-transform duration-300 z-10" width={800} height={800} />
+    <section className="relative min-h-screen min-w-screen flex items-center justify-center ">
+      <img src={bush_round} alt="bush" className="absolute -bottom-[300px] -left-[450px] hover:scale-105 transition-transform duration-300 pointer-events-none z-50" width={800} height={800} />
+      <img src={bush_round} alt="bush" className="absolute -bottom-[450px] rotate-[180deg] -right-[450px] hover:scale-105 transition-transform duration-300 z-50 pointer-events-none" width={800} height={800} />
+      <img src={character2} alt="character2" className="absolute -bottom-[600px] scale-[0.3] -left-[300px] transition-transform duration-300 z-10" width={800} height={800} />
       <img 
         ref={willowLeafRef}
         src={willowleaf}
         alt="willowleaf" 
-        className="absolute -top-[150px] rotate-[90deg] -left-[350px] scale-[0.3] animate-wind-shake-natural transition-transform duration-300 z-10" 
+        className="absolute -top-[150px] rotate-[90deg] -left-[350px] scale-[0.3] animate-wind-shake-natural transition-transform duration-300 z-[15]" 
         style={{
           transformOrigin: 'top center',
           animation: 'wind-shake-natural 8s ease-in-out infinite',
@@ -120,8 +120,8 @@ const HeroSection = () => {
         width={800} 
         height={800} 
       />
-      <div className="absolute bottom-0 left-[300px] w-[300px] h-[600px] bg-gradient-to-r from-[#00482D]/0 to-[#00482D] z-10 "></div>
-      <div className="absolute bottom-[450px] left-0 w-[600px] h-[100px] bg-gradient-to-t from-[#00482D]/0 to-[#00482D] z-10 "></div>
+      <div className="absolute bottom-0 left-[150px] w-[70px] h-[600px] bg-gradient-to-r from-[#00482D]/0 to-[#00482D] z-10 "></div>
+      <div className="absolute bottom-[550px] left-0 w-[600px] h-[30px] bg-gradient-to-t from-[#00482D]/0 to-[#00482D] z-10 "></div>
       {/* Enhanced Background with Multiple Layers */}
       <div className="absolute inset-0">
         {/* Base background image with improved positioning and scaling */}
@@ -145,7 +145,7 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto max-w-7xl px-4">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
+        <div className="flex flex-col max-lg:flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:gap-12">
           {/* Left Side - Hero Content */}
           <div className="flex-1 text-center lg:text-left max-w-2xl">
             <h1 className="text-6xl md:text-8xl font-bold font-pinewood text-[#DE711A] text-white mb-6 leading-tight drop-shadow-2xl">
@@ -339,14 +339,14 @@ const HeroSection = () => {
         </div>
         
         {/* Enhanced Stats Section */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 max-w-5xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:mt-20 max-w-5xl mx-auto">
           {[
             { label: t("hero.stats.totalSupply"), value: "1B" },
             { label: t("hero.stats.stakingApy"), value: "120%" },
             { label: t("hero.stats.holders"), value: "25K+" },
             { label: t("hero.stats.burned"), value: "10M+" }
           ].map((stat, index) => (
-            <div key={index} className="p-6 text-center bg-cover z-50 bg-center bg-no-repeat transition-all duration-300 hover:scale-150" style={{ backgroundImage: `url(${miniWood})` }}>
+            <div key={index} className="p-6 text-center bg-cover z-50 bg-center bg-no-repeat transition-all duration-300 hover:scale-[1.1]" style={{ backgroundImage: `url(${miniWood})` }}>
               <div className="text-3xl font-bold text-white mb-2 mt-8 drop-shadow-lg">{stat.value}</div>
               <div className="text-slate-300 text-sm font-medium">{stat.label}</div>
             </div>

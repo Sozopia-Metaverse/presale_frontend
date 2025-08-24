@@ -129,7 +129,7 @@ const TokenomicsSection = () => {
   return (
     <section
       id="tokenomics"
-      className="py-20 relative overflow-hidden bg-green-800"
+      className="py-20 relative overflow-hidden bg-[#00482D]"
     >
       <div className="container mx-auto px-4 relative ">
         <div className="text-center mb-16 z-50">
