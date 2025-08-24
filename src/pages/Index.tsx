@@ -17,9 +17,9 @@ const Index = () => {
     <ReactLenis root>
     <div className="min-h-screen">
       <Header />
-      <div className="pt-12"> {/* Add padding to account for the banner height */}
+      <div className="pt-12 w-screen"> {/* Add padding to account for the banner height */}
         <PresaleBanner />
-        <main>
+        <main className="w-screen">
           <HeroSection />
           <FeatureSection />
           <TokenomicsSection />

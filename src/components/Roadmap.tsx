@@ -80,7 +80,7 @@ const Roadmap = () => {
   };
 
   return (
-    <section id="roadmap" className="py-32 relative min-h-screen bg-[#00482D]">
+    <section id="roadmap" className="py-32 relative min-h-screen bg-[#014829]">
       <img
         src={character_roadmap}
         alt="character_roadmap"
