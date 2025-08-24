@@ -67,8 +67,8 @@ const Header = () => {
   return (
     <header className={`fixed top-0 left-0 w-full z-[60] transition-all duration-300 ${
       isScrolled 
-        ? 'lg:top-0 lg:left-1/2 lg:-translate-x-1/2 lg:w-screen  bg-background/95 backdrop-blur-xl border border-border/50 shadow-golden-strong' 
-        : 'lg:top-0 lg:left-1/2 lg:-translate-x-1/2 lg:w-screen  bg-background/80 backdrop-blur-lg border-b border-border/50 shadow-lg'
+        ? 'lg:top-0 lg:left-1/2 lg:-translate-x-1/2 lg:w-screen  bg-background backdrop-blur-xl border border-border/50 shadow-golden-strong' 
+        : 'lg:top-0 lg:left-1/2 lg:-translate-x-1/2 lg:w-screen  bg-background backdrop-blur-lg border-b border-border/50 shadow-lg'
     }`}>
       <div className="container mx-auto px-4 py-1">
         <div className="flex items-center justify-between">

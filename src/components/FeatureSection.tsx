@@ -185,7 +185,7 @@ const FeatureSection = () => {
         ref={avatarRef}
         src={Avatar} 
         alt="avatar" 
-        className="absolute -bottom-[680px] rotate-[-45deg] -right-[430px] scale-50 transition-all duration-500 ease-out z-50 hover:scale-60 hover:rotate-[-40deg] cursor-pointer" 
+        className="absolute hidden -bottom-[680px] rotate-[-45deg] -right-[430px] scale-50 transition-all duration-500 ease-out z-50 hover:scale-60 hover:rotate-[-40deg] cursor-pointer" 
         width={800} 
         height={800} 
         tabIndex={0}
@@ -215,7 +215,7 @@ const FeatureSection = () => {
                   <img 
                     src={feature.image}
                     alt={feature.title}
-                    className="w-96 h-96 object-contain scale-150 transition-transform duration-300"
+                    className="w-96 h-96 object-contain  transition-transform duration-300"
                     loading="lazy"
                   />
                 ) : (
@@ -238,14 +238,12 @@ const FeatureSection = () => {
               </p>
               
               <button 
-                ref={learnMoreButtonRef} // Only attach ref to the Learn More button
                 className="
                   font-bold font-pinewood text-2xl text-white
                   bg-cover bg-center bg-no-repeat
                   w-64 h-40 relative z-[55]
                   transition-all duration-500 ease-out
                   hover:scale-[1.35] hover:rotate-1
-                  animate-wood-grain
                   group
                   overflow-hidden
                   scale-125
