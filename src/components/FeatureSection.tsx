@@ -1,6 +1,6 @@
 import character_stake from "@/assets/character_stake.webp";
-import character_wallet from "@/assets/character_wallet.gif";
-import character_inflation from "@/assets/character_inflation.gif";
+import character_wallet from "@/assets/character_wallet.webp";
+import character_inflation from "@/assets/character_inflation.webp";
 import { Button } from "@/components/ui/button";
 import btn from "@/assets/btn.webp";
 import bush from "@/assets/bush.webp";
@@ -173,7 +173,7 @@ const FeatureSection = () => {
   return (
     <section ref={sectionRef} className="py-20 bg-background relative">
       <div className="container mx-auto max-w-7xl px-4 ">
-        <img src={border} alt="border" className="absolute scale-x-[-1] rotate-[180deg] scale-y-[0.6] -bottom-[138px] right-[200px] h-96 w-[90vw] z-[15]"  />
+        <img src={border} alt="border" className="absolute scale-y-[0.5] scale-x-[-1] -bottom-[420px] left-[140px] h-[850px] w-[80vw] z-[15] rotate-[180deg]"  />
        
       <img 
         ref={bushLeftRef}
@@ -245,7 +245,7 @@ const FeatureSection = () => {
                   bg-cover bg-center bg-no-repeat
                   w-64 h-auto relative z-[55]
                   transition-all duration-500 ease-out
-                  hover:scale-[1.35] hover:rotate-1
+                  hover:scale-[0.9] hover:rotate-1
                   group
                   overflow-hidden
                   scale-[0.8]

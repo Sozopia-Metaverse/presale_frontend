@@ -15,7 +15,7 @@ import character from "@/assets/character.png";
 import character2 from "@/assets/character_side.webp";
 import willowleaf from "@/assets/branch.webp";
 import subcloud from "@/assets/subcloud.webp";
-import border from "@/assets/border.webp";
+import border from "@/assets/border.png";
 
 const HeroSection = () => {
   const { t } = useTranslation();
@@ -122,12 +122,12 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen min-w-screen flex items-center justify-center ">
-      <img src={border} alt="border" className="absolute scale-y-[0.5] -bottom-[208px] left-[270px] h-96 w-[80vw] z-[15]"  />
-      <img src={subcloud} alt="subcloud" className="absolute bottom-1/2   left-1/2 transition-transform duration-300 z-[15]"  />
-      <img src={subcloud} alt="subcloud" className="absolute bottom-[150px] scale-[0.4]  -right-[550px] transition-transform duration-300 z-[15]"  />
+      <img src={border} alt="border" className="absolute scale-y-[0.5] -bottom-[388px] left-[270px] h-[850px] w-[80vw] z-[15]"  />
+      <img src={subcloud} alt="subcloud" className="absolute top-[10px]   -left-[30px] transition-transform duration-300 z-[15]"  />
+      <img src={subcloud} alt="subcloud" className="absolute top-0 scale-[0.8]  -right-[50px] transition-transform duration-300 z-[15]"  />
       <img src={bush_round} alt="bush" className="absolute -bottom-[300px] -left-[450px] hover:scale-105 transition-transform duration-300 pointer-events-none z-50" width={800} height={800} />
       <img src={bush_round} alt="bush" className="absolute -bottom-[450px] rotate-[180deg] -right-[450px] hover:scale-105 transition-transform duration-300 z-50 pointer-events-none" width={800} height={800} />
-      <img src={character2} alt="character2" className="absolute -bottom-[100px] scale-[0.3] -left-[300px] transition-transform duration-300 z-10" width={800} height={800} />
+      <img src={character2} alt="character2" className="absolute -bottom-[300px] scale-[0.3] -left-[300px] transition-transform duration-300 z-10" width={800} height={800} />
       <img 
         ref={willowLeafRef}
         src={willowleaf}
@@ -155,8 +155,8 @@ const HeroSection = () => {
         height={800} 
       />
       
-      <div className="absolute bottom-0 left-[150px] w-[70px] h-[600px] bg-gradient-to-r from-[#00482D]/0 to-[#00482D] z-10 "></div>
-      <div className="absolute bottom-[550px] left-0 w-[600px] h-[30px] bg-gradient-to-t from-[#00482D]/0 to-[#00482D] z-10 "></div>
+      {/* <div className="absolute bottom-0 left-[150px] w-[70px] h-[600px] bg-gradient-to-r from-[#00482D]/0 to-[#00482D] z-10 "></div> */}
+      {/* <div className="absolute bottom-[550px] left-0 w-[600px] h-[30px] bg-gradient-to-t from-[#00482D]/0 to-[#00482D] z-10 "></div> */}
       {/* Enhanced Background with Multiple Layers */}
       <div className="absolute inset-0">
         {/* Base background image with improved positioning and scaling */}
@@ -164,8 +164,8 @@ const HeroSection = () => {
           className="absolute inset-0"
         />
         
-        {/* Solid background color #00482D */}
-        <div className="absolute inset-0 bg-[#00482D]" />
+        {/* Solid background color #014328 */}
+        <div className="absolute inset-0 bg-[#014328]" />
         
         {/* Remove or comment out the gradient overlays for solid color */}
         {/* <div className="absolute inset-0 bg-gradient-to-br from-slate-900/60 via-slate-800/40 to-slate-900/60" />
@@ -214,8 +214,8 @@ const HeroSection = () => {
                    transformOrigin: 'top center',
                    animation: 'wind-shake-natural 8s ease-in-out infinite'
                  }}>
-              <img src={woodPattern} alt="woodPattern" className="absolute scale-x-[1.8] scale-y-[2.7] top-0 left-0 w-[600px] h-auto object-cover " />
-              <div className="p-6 translate-y-28">
+              <img src={woodPattern} alt="woodPattern" className="absolute scale-x-[1.8] scale-y-[2.5] -top-[30px] left-0 w-[600px] h-auto object-cover " />
+              <div className="p-6 translate-y-12">
                 {/* Wooden Header Section */}
                 <div className="text-center mb-6">
                   <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-amber-800/80 to-amber-900/80 border-2 border-amber-700/60 mb-3 shadow-lg backdrop-blur-sm">
@@ -365,7 +365,7 @@ const HeroSection = () => {
         <div className="relative h-32 lg:mt-12 max-w-5xl mx-auto">
           {/* Wooden Additional Info */}
           <div 
-            className={`absolute inset-0 scale-[0.75]  transition-all duration-500 ease-in-out ${
+            className={`absolute inset-0 scale-[0.75] -top-[50px]  transition-all duration-500 ease-in-out ${
               showStats 
                 ? 'opacity-0 transform translate-y-4 pointer-events-none' 
                 : 'opacity-100 transform translate-y-0'
@@ -385,7 +385,7 @@ const HeroSection = () => {
           
           {/* Enhanced Stats Section */}
           <div 
-            className={`absolute inset-0 lg:mt-12 transition-all duration-500 ease-in-out ${
+            className={`absolute inset-0 lg:mt-12 -top-[50px] transition-all duration-500 ease-in-out ${
               showStats 
                 ? 'opacity-100 transform translate-y-0' 
                 : 'opacity-0 transform -translate-y-4 pointer-events-none'
@@ -398,8 +398,8 @@ const HeroSection = () => {
                 { label: t("hero.stats.holders"), value: "25K+" },
                 { label: t("hero.stats.burned"), value: "10M+" }
               ].map((stat, index) => (
-                <div key={index} className="p-6 text-center bg-cover z-50 bg-center bg-no-repeat transition-all scale-[0.6] h-auto w-[300px] duration-300 hover:scale-[0.7]" style={{ backgroundImage: `url(${miniWood})` }}>
-                  <div className="text-3xl font-bold text-white mb-2 mt-8 drop-shadow-lg">{stat.value}</div>
+                <div key={index} className="p-6 text-center bg-cover z-50 bg-center bg-no-repeat transition-all scale-[0.8] h-auto  duration-300 hover:scale-[0.7]" style={{ backgroundImage: `url(${miniWood})` }}>
+                  <div className="text-3xl font-bold text-white mb-2 mt-0 drop-shadow-lg">{stat.value}</div>
                   <div className="text-slate-300 text-sm font-medium">{stat.label}</div>
                 </div>
               ))}

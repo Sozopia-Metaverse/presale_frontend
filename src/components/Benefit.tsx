@@ -77,8 +77,8 @@ const Benefit = () => {
       <div className="absolute bottom-40 left-20 w-20 h-12 bg-green-100 rounded-full opacity-30 animate-pulse" style={{ animationDelay: '2s' }}></div>
 
       {/* Decorative Elements with subtle green styling */}
-      <img src={bush} alt="bush" className="absolute -top-[240px] -left-[332px] rotate-[90deg] hover:scale-110 hover:rotate-[95deg] transition-all duration-500 z-10 filter brightness-110" width={800} height={800} />
-      <img src={bush} alt="bush" className="absolute -top-[240px] -right-[342px] rotate-[-90deg] hover:scale-110 hover:rotate-[-95deg] transition-all duration-500 z-10 filter brightness-110" width={800} height={800} />
+      <img src={bush} alt="bush" className="absolute -top-[170px] -left-[332px] rotate-[90deg] hover:scale-110 hover:rotate-[95deg] transition-all duration-500 z-10 filter brightness-110" width={800} height={800} />
+      <img src={bush} alt="bush" className="absolute -top-[390px] -right-[272px] rotate-[-90deg] hover:scale-110 hover:rotate-[-95deg] transition-all duration-500 z-10 filter brightness-110" width={800} height={800} />
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Benefit GIF Image */}

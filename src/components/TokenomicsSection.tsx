@@ -130,9 +130,9 @@ const TokenomicsSection = () => {
   return (
     <section
       id="tokenomics"
-      className="py-20 relative  bg-[#00482D]"
+      className="py-20 relative  bg-[#014328]"
     >
-      <img src={border} alt="border" className="absolute  scale-y-[0.6] -bottom-[238px] right-[160px] h-96 w-[90vw] z-[10]"  />
+      <img src={border} alt="border" className="absolute scale-y-[0.5] -bottom-[428px] left-[160px] h-[850px] w-[80vw] z-[10]"  />
       <div className="container mx-auto px-4 relative ">
         <div className="text-center mb-16 z-50">
           <h2 className="text-6xl font-bold font-pinewood text-white mb-6 drop-shadow-lg">TOKENOMICS</h2>
