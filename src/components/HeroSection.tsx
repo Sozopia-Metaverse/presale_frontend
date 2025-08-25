@@ -7,15 +7,15 @@ import { useAccount } from "wagmi";
 import { useState, useEffect, useCallback, useRef } from "react";
 import { gsap } from "gsap";
 import heroImage from "@/assets/background.png";
-import miniWood from "@/assets/mini_wood.png";
+import miniWood from "@/assets/mini_wood.webp";
 import woodPattern from "@/assets/woodenPanel.webp";
 import woodButton from "@/assets/woodenBtn.png";
-import bush_round from "@/assets/bush_round.png";
+import bush_round from "@/assets/bush_round.webp";
 import character from "@/assets/character.png";
-import character2 from "@/assets/character_side.gif";
-import willowleaf from "@/assets/branch.png";
-import subcloud from "@/assets/subcloud.png";
-import border from "@/assets/border.png";
+import character2 from "@/assets/character_side.webp";
+import willowleaf from "@/assets/branch.webp";
+import subcloud from "@/assets/subcloud.webp";
+import border from "@/assets/border.webp";
 
 const HeroSection = () => {
   const { t } = useTranslation();
@@ -123,11 +123,11 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen min-w-screen flex items-center justify-center ">
       <img src={border} alt="border" className="absolute scale-y-[0.5] -bottom-[208px] left-[270px] h-96 w-[80vw] z-[15]"  />
-      <img src={subcloud} alt="subcloud" className="absolute bottom-[150px] scale-[0.5]  -left-[550px] transition-transform duration-300 z-[15]"  />
+      <img src={subcloud} alt="subcloud" className="absolute bottom-1/2   left-1/2 transition-transform duration-300 z-[15]"  />
       <img src={subcloud} alt="subcloud" className="absolute bottom-[150px] scale-[0.4]  -right-[550px] transition-transform duration-300 z-[15]"  />
       <img src={bush_round} alt="bush" className="absolute -bottom-[300px] -left-[450px] hover:scale-105 transition-transform duration-300 pointer-events-none z-50" width={800} height={800} />
       <img src={bush_round} alt="bush" className="absolute -bottom-[450px] rotate-[180deg] -right-[450px] hover:scale-105 transition-transform duration-300 z-50 pointer-events-none" width={800} height={800} />
-      <img src={character2} alt="character2" className="absolute -bottom-[600px] scale-[0.3] -left-[300px] transition-transform duration-300 z-10" width={800} height={800} />
+      <img src={character2} alt="character2" className="absolute -bottom-[100px] scale-[0.3] -left-[300px] transition-transform duration-300 z-10" width={800} height={800} />
       <img 
         ref={willowLeafRef}
         src={willowleaf}
@@ -372,12 +372,12 @@ const HeroSection = () => {
             }`}
           >
             <div className="grid grid-cols-2 gap-6">
-              <div className="p-6 pt-24 text-center bg-cover h-[250px] z-50 bg-center bg-no-repeat transition-all duration-300 scale-[0.8]" style={{ backgroundImage: `url(${miniWood})` }}>
-                <div className="text-5xl font-bold text-white mb-2 mt-8 drop-shadow-lg">${presaleData.softCap.toLocaleString()}</div>
+              <div className="p-6 pt-20 text-center bg-cover h-auto z-50 bg-center bg-no-repeat transition-all duration-300 scale-[0.5]" style={{ backgroundImage: `url(${miniWood})` }}>
+                <div className="text-6xl font-bold text-white mb-2 drop-shadow-lg">${presaleData.softCap.toLocaleString()}</div>
                 <div className="text-slate-300 text-2xl font-medium">Soft Cap</div>
               </div>
-              <div className="p-6 pt-24 text-center bg-cover h-[250px] z-50 bg-center bg-no-repeat transition-all duration-300 scale-[0.8]" style={{ backgroundImage: `url(${miniWood})` }}>
-                <div className="text-5xl font-bold text-white mb-2 mt-8 drop-shadow-lg">{(presaleData.totalRaised / presaleData.tokenPrice).toLocaleString()}</div>
+              <div className="p-6 pt-20 text-center bg-cover h-[250px] z-50 bg-center bg-no-repeat transition-all duration-300 scale-[0.5]" style={{ backgroundImage: `url(${miniWood})` }}>
+                <div className="text-6xl font-bold text-white mb-2 drop-shadow-lg">{(presaleData.totalRaised / presaleData.tokenPrice).toLocaleString()}</div>
                 <div className="text-slate-300 text-2xl font-medium">Tokens Sold</div>
               </div>
             </div>
@@ -398,7 +398,7 @@ const HeroSection = () => {
                 { label: t("hero.stats.holders"), value: "25K+" },
                 { label: t("hero.stats.burned"), value: "10M+" }
               ].map((stat, index) => (
-                <div key={index} className="p-6 text-center bg-cover z-50 bg-center bg-no-repeat transition-all duration-300 hover:scale-[1.1]" style={{ backgroundImage: `url(${miniWood})` }}>
+                <div key={index} className="p-6 text-center bg-cover z-50 bg-center bg-no-repeat transition-all scale-[0.6] h-auto w-[300px] duration-300 hover:scale-[0.7]" style={{ backgroundImage: `url(${miniWood})` }}>
                   <div className="text-3xl font-bold text-white mb-2 mt-8 drop-shadow-lg">{stat.value}</div>
                   <div className="text-slate-300 text-sm font-medium">{stat.label}</div>
                 </div>

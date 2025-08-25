@@ -437,31 +437,6 @@
 /* Willowleaf animation with scale 0.8 and rotation */
 @keyframes willowleaf-shake-natural {
   0%, 100% {
-    transform: scale(0.3) rotate(0deg) translateY(0px);
-  }
-  15% {
-    transform: scale(0.3) rotate(1.2deg) translateY(-1px);
-  }
-  30% {
-    transform: scale(0.3) rotate(-1deg) translateY(0px);
-  }
-  45% {
-    transform: scale(0.3) rotate(0.8deg) translateY(-0.5px);
-  }
-  60% {
-    transform: scale(0.3) rotate(-0.6deg) translateY(0px);
-  }
-  75% {
-    transform: scale(0.3) rotate(0.4deg) translateY(-0.2px);
-  }
-  90% {
-    transform: scale(0.3) rotate(-0.2deg) translateY(0px);
-  }
-}
-
-/* Willowleaf animation with scale 0.8 and rotation */
-@keyframes willowleaf_down-shake-natural {
-  0%, 100% {
     transform: scale(0.2) rotate(0deg) translateY(0px);
   }
   15% {
@@ -481,5 +456,30 @@
   }
   90% {
     transform: scale(0.2) rotate(-0.2deg) translateY(0px);
+  }
+}
+
+/* Willowleaf animation with scale 0.8 and rotation */
+@keyframes willowleaf_down-shake-natural {
+  0%, 100% {
+    transform: scale(0.15) rotate(0deg) translateY(0px);
+  }
+  15% {
+    transform: scale(0.15) rotate(1.2deg) translateY(-1px);
+  }
+  30% {
+    transform: scale(0.15) rotate(-1deg) translateY(0px);
+  }
+  45% {
+    transform: scale(0.15) rotate(0.8deg) translateY(-0.5px);
+  }
+  60% {
+    transform: scale(0.15) rotate(-0.6deg) translateY(0px);
+  }
+  75% {
+    transform: scale(0.15) rotate(0.4deg) translateY(-0.2px);
+  }
+  90% {
+    transform: scale(0.15) rotate(-0.2deg) translateY(0px);
   }
 }

@@ -159,7 +159,7 @@ const TokenomicsSection = () => {
               ref={chartRef}
               className="w-full h-full"
             />
-            <img src="/palmtree.png" alt="Tokenomics" className="absolute bottom-48 left-1/2 -translate-x-1/2 z-0 w-[300px] md:w-[450px] pointer-events-none" />
+            <img src="/palmtree.webp" alt="Tokenomics" className="absolute bottom-48 left-1/2 -translate-x-1/2 z-0 w-[300px] md:w-[450px] pointer-events-none" />
           </div>
           <div className="space-y-2">
             {tokenomicsData.map((entry, index) => (

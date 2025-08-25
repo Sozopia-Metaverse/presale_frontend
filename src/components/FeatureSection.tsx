@@ -1,9 +1,9 @@
-import character_stake from "@/assets/character_stake.gif";
+import character_stake from "@/assets/character_stake.webp";
 import character_wallet from "@/assets/character_wallet.gif";
 import character_inflation from "@/assets/character_inflation.gif";
 import { Button } from "@/components/ui/button";
-import btn from "@/assets/btn.png";
-import bush from "@/assets/bush.png";
+import btn from "@/assets/btn.webp";
+import bush from "@/assets/bush.webp";
 import Avatar from "@/assets/avatar.png";
 import Avatar2 from "@/assets/avatar2.png";
 import border from "@/assets/border.png";
@@ -179,7 +179,7 @@ const FeatureSection = () => {
         ref={bushLeftRef}
         src={bush}
         alt="bush"
-        className="absolute -bottom-[200px] rotate-[90deg] -left-[300px] hover:scale-105 transition-transform duration-300 z-50" 
+        className="absolute -bottom-[200px] rotate-[90deg] scale-[0.8] -left-[300px] hover:scale-105 transition-transform duration-300 z-50" 
         width={800}
         height={800}
       />
@@ -243,13 +243,13 @@ const FeatureSection = () => {
                 className="
                   font-bold font-pinewood text-2xl text-white
                   bg-cover bg-center bg-no-repeat
-                  w-64 h-40 relative z-[55]
+                  w-64 h-auto relative z-[55]
                   transition-all duration-500 ease-out
                   hover:scale-[1.35] hover:rotate-1
                   group
                   overflow-hidden
-                  scale-125
-                  pb-4
+                  scale-[0.8]
+                  py-8
                 " 
                 style={{ backgroundImage: `url(${btn})` }}
               >
