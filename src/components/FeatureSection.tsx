@@ -6,6 +6,7 @@ import btn from "@/assets/btn.png";
 import bush from "@/assets/bush.png";
 import Avatar from "@/assets/avatar.png";
 import Avatar2 from "@/assets/avatar2.png";
+import border from "@/assets/border.png";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef, useState } from "react";
@@ -172,12 +173,13 @@ const FeatureSection = () => {
   return (
     <section ref={sectionRef} className="py-20 bg-background relative">
       <div className="container mx-auto max-w-7xl px-4 ">
+        <img src={border} alt="border" className="absolute scale-x-[-1] rotate-[180deg] scale-y-[0.6] -bottom-[138px] right-[200px] h-96 w-[90vw] z-[15]"  />
        
       <img 
         ref={bushLeftRef}
         src={bush}
         alt="bush"
-        className="absolute -bottom-0 rotate-[90deg] -left-[300px] hover:scale-105 transition-transform duration-300 z-50" 
+        className="absolute -bottom-[200px] rotate-[90deg] -left-[300px] hover:scale-105 transition-transform duration-300 z-50" 
         width={800}
         height={800}
       />
@@ -185,7 +187,7 @@ const FeatureSection = () => {
         ref={avatarRef}
         src={Avatar} 
         alt="avatar" 
-        className="absolute hidden -bottom-[680px] rotate-[-45deg] -right-[430px] scale-50 transition-all duration-500 ease-out z-50 hover:scale-60 hover:rotate-[-40deg] cursor-pointer" 
+        className="absolute hidden -bottom-[980px] rotate-[-45deg] -right-[430px] scale-50 transition-all duration-500 ease-out z-50 hover:scale-60 hover:rotate-[-40deg] cursor-pointer" 
         width={800} 
         height={800} 
         tabIndex={0}

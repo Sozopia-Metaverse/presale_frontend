@@ -13,12 +13,18 @@ import woodButton from "@/assets/woodenBtn.png";
 import bush_round from "@/assets/bush_round.png";
 import character from "@/assets/character.png";
 import character2 from "@/assets/character_side.gif";
-import willowleaf from "@/assets/willowleave.png";
+import willowleaf from "@/assets/branch.png";
+import subcloud from "@/assets/subcloud.png";
+import border from "@/assets/border.png";
 
 const HeroSection = () => {
   const { t } = useTranslation();
   const { isConnected } = useAccount();
   const willowLeafRef = useRef<HTMLImageElement>(null);
+  
+  // Animation state for alternating sections
+  const [showStats, setShowStats] = useState(true);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   
   // Presale data - you can replace these with real data from your smart contract
   const [timeRemaining, setTimeRemaining] = useState({
@@ -36,6 +42,22 @@ const HeroSection = () => {
     tokenPrice: 0.0001, // ETH per token
     isLive: true
   };
+
+  // Animation effect for alternating sections
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsTransitioning(true);
+      
+      // Smooth transition animation
+      setTimeout(() => {
+        setShowStats(!showStats);
+        setIsTransitioning(false);
+      }, 500); // Half second transition
+      
+    }, 3000); // 3 seconds per section
+
+    return () => clearInterval(interval);
+  }, [showStats]);
 
   // Calculate time remaining function
   const calculateTimeRemaining = useCallback(() => {
@@ -96,15 +118,13 @@ const HeroSection = () => {
     return () => clearInterval(interval);
   }, []);
 
-
-  
-  
-  
-
   const progressPercentage = (presaleData.totalRaised / presaleData.hardCap) * 100;
 
   return (
     <section className="relative min-h-screen min-w-screen flex items-center justify-center ">
+      <img src={border} alt="border" className="absolute scale-y-[0.5] -bottom-[208px] left-[270px] h-96 w-[80vw] z-[15]"  />
+      <img src={subcloud} alt="subcloud" className="absolute bottom-[150px] scale-[0.5]  -left-[550px] transition-transform duration-300 z-[15]"  />
+      <img src={subcloud} alt="subcloud" className="absolute bottom-[150px] scale-[0.4]  -right-[550px] transition-transform duration-300 z-[15]"  />
       <img src={bush_round} alt="bush" className="absolute -bottom-[300px] -left-[450px] hover:scale-105 transition-transform duration-300 pointer-events-none z-50" width={800} height={800} />
       <img src={bush_round} alt="bush" className="absolute -bottom-[450px] rotate-[180deg] -right-[450px] hover:scale-105 transition-transform duration-300 z-50 pointer-events-none" width={800} height={800} />
       <img src={character2} alt="character2" className="absolute -bottom-[600px] scale-[0.3] -left-[300px] transition-transform duration-300 z-10" width={800} height={800} />
@@ -112,14 +132,29 @@ const HeroSection = () => {
         ref={willowLeafRef}
         src={willowleaf}
         alt="willowleaf" 
-        className="absolute -top-[150px] rotate-[90deg] -left-[350px] scale-[0.3] animate-wind-shake-natural transition-transform duration-300 z-[15]" 
+        className="absolute -top-[0px] rotate-[90deg] -left-[350px] transition-transform duration-300 z-[15]" 
         style={{
           transformOrigin: 'top center',
-          animation: 'wind-shake-natural 8s ease-in-out infinite',
+          transform: 'scale(0.5) rotate(90deg)',
+          animation: 'willowleaf-shake-natural 8s ease-in-out infinite',
         }}
         width={800} 
         height={800} 
       />
+      <img 
+        ref={willowLeafRef}
+        src={willowleaf}
+        alt="willowleaf" 
+        className="absolute -top-[0px] rotate-[90deg] -right-[350px] transition-transform duration-300 z-[15]" 
+        style={{
+          transformOrigin: 'top center',
+          transform: 'scale(0.5) rotate(90deg)',
+          animation: 'willowleaf_down-shake-natural 8s ease-in-out infinite',
+        }}
+        width={800} 
+        height={800} 
+      />
+      
       <div className="absolute bottom-0 left-[150px] w-[70px] h-[600px] bg-gradient-to-r from-[#00482D]/0 to-[#00482D] z-10 "></div>
       <div className="absolute bottom-[550px] left-0 w-[600px] h-[30px] bg-gradient-to-t from-[#00482D]/0 to-[#00482D] z-10 "></div>
       {/* Enhanced Background with Multiple Layers */}
@@ -245,7 +280,7 @@ const HeroSection = () => {
                 </div>
 
                 {/* Wooden Action Buttons */}
-                <div className="space-y-4 mt-8">
+                <div className="space-y-4 my-8">
                   <ConnectButton.Custom>
                     {({
                       account,
@@ -320,37 +355,56 @@ const HeroSection = () => {
                   )}
                 </div>
 
-                {/* Wooden Additional Info */}
-                <div className=" pt-4 border-t-2 border-amber-700/50">
-                  <div className="grid grid-cols-2 gap-4 text-center">
-                    <div className="bg-gradient-to-br from-amber-800/60 to-amber-900/60 rounded-lg p-3 border border-amber-700/50">
-                      <div className="text-amber-200/80 text-xs font-pinewood">Soft Cap</div>
-                      <div className="text-amber-100 font-bold font-pinewood text-sm">${presaleData.softCap.toLocaleString()}</div>
-                    </div>
-                    <div className="bg-gradient-to-br from-amber-800/60 to-amber-900/60 rounded-lg p-3 border border-amber-700/50">
-                      <div className="text-amber-200/80 text-xs font-pinewood">Tokens Sold</div>
-                      <div className="text-amber-100 font-bold font-pinewood text-sm">{(presaleData.totalRaised / presaleData.tokenPrice).toLocaleString()}</div>
-                    </div>
-                  </div>
-                </div>
+                
               </div>
             </div>
           </div>
         </div>
-        
-        {/* Enhanced Stats Section */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:mt-20 max-w-5xl mx-auto">
-          {[
-            { label: t("hero.stats.totalSupply"), value: "1B" },
-            { label: t("hero.stats.stakingApy"), value: "120%" },
-            { label: t("hero.stats.holders"), value: "25K+" },
-            { label: t("hero.stats.burned"), value: "10M+" }
-          ].map((stat, index) => (
-            <div key={index} className="p-6 text-center bg-cover z-50 bg-center bg-no-repeat transition-all duration-300 hover:scale-[1.1]" style={{ backgroundImage: `url(${miniWood})` }}>
-              <div className="text-3xl font-bold text-white mb-2 mt-8 drop-shadow-lg">{stat.value}</div>
-              <div className="text-slate-300 text-sm font-medium">{stat.label}</div>
+
+        {/* Animated Sections Container */}
+        <div className="relative h-32 lg:mt-12 max-w-5xl mx-auto">
+          {/* Wooden Additional Info */}
+          <div 
+            className={`absolute inset-0 scale-[0.75]  transition-all duration-500 ease-in-out ${
+              showStats 
+                ? 'opacity-0 transform translate-y-4 pointer-events-none' 
+                : 'opacity-100 transform translate-y-0'
+            }`}
+          >
+            <div className="grid grid-cols-2 gap-6">
+              <div className="p-6 pt-24 text-center bg-cover h-[250px] z-50 bg-center bg-no-repeat transition-all duration-300 scale-[0.8]" style={{ backgroundImage: `url(${miniWood})` }}>
+                <div className="text-5xl font-bold text-white mb-2 mt-8 drop-shadow-lg">${presaleData.softCap.toLocaleString()}</div>
+                <div className="text-slate-300 text-2xl font-medium">Soft Cap</div>
+              </div>
+              <div className="p-6 pt-24 text-center bg-cover h-[250px] z-50 bg-center bg-no-repeat transition-all duration-300 scale-[0.8]" style={{ backgroundImage: `url(${miniWood})` }}>
+                <div className="text-5xl font-bold text-white mb-2 mt-8 drop-shadow-lg">{(presaleData.totalRaised / presaleData.tokenPrice).toLocaleString()}</div>
+                <div className="text-slate-300 text-2xl font-medium">Tokens Sold</div>
+              </div>
             </div>
-          ))}
+          </div>
+          
+          {/* Enhanced Stats Section */}
+          <div 
+            className={`absolute inset-0 lg:mt-12 transition-all duration-500 ease-in-out ${
+              showStats 
+                ? 'opacity-100 transform translate-y-0' 
+                : 'opacity-0 transform -translate-y-4 pointer-events-none'
+            }`}
+          >
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {[
+                { label: t("hero.stats.totalSupply"), value: "1B" },
+                { label: t("hero.stats.stakingApy"), value: "120%" },
+                { label: t("hero.stats.holders"), value: "25K+" },
+                { label: t("hero.stats.burned"), value: "10M+" }
+              ].map((stat, index) => (
+                <div key={index} className="p-6 text-center bg-cover z-50 bg-center bg-no-repeat transition-all duration-300 hover:scale-[1.1]" style={{ backgroundImage: `url(${miniWood})` }}>
+                  <div className="text-3xl font-bold text-white mb-2 mt-8 drop-shadow-lg">{stat.value}</div>
+                  <div className="text-slate-300 text-sm font-medium">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

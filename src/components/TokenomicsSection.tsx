@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useEffect, useRef } from 'react';
+import border from "@/assets/border.png";
 // Declare AmCharts as a global variable
 declare global {
   interface Window {
@@ -129,8 +130,9 @@ const TokenomicsSection = () => {
   return (
     <section
       id="tokenomics"
-      className="py-20 relative overflow-hidden bg-[#00482D]"
+      className="py-20 relative  bg-[#00482D]"
     >
+      <img src={border} alt="border" className="absolute  scale-y-[0.6] -bottom-[238px] right-[160px] h-96 w-[90vw] z-[10]"  />
       <div className="container mx-auto px-4 relative ">
         <div className="text-center mb-16 z-50">
           <h2 className="text-6xl font-bold font-pinewood text-white mb-6 drop-shadow-lg">TOKENOMICS</h2>

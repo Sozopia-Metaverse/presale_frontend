@@ -14,7 +14,7 @@ const PresaleBanner = () => {
 
   return (
     <div 
-      className={`fixed top-16 left-0 w-full z-[60] bg-gradient-to-r from-primary/90 via-secondary/90 to-primary/90 backdrop-blur-sm border-b border-primary/30 transition-all duration-1000 ${
+      className={`fixed top-16 left-0 w-screen z-[60] bg-gradient-to-r from-primary/90 via-secondary/90 to-primary/90 backdrop-blur-sm border-b border-primary/30 transition-all duration-1000 ${
         isVisible ? 'translate-y-0 opacity-100' : ' opacity-100'
       }`}
     >
