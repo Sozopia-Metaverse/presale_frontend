@@ -15,7 +15,7 @@ import { ReactLenis } from 'lenis/react'
 const Index = () => {
   return (
     <ReactLenis root>
-    <div className="min-h-screen">
+    <div className="w-screen">
       <Header />
       <div className="pt-12 w-screen"> {/* Add padding to account for the banner height */}
         <PresaleBanner />

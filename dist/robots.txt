@@ -1,14 +1,39 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
+# SOZOPIA Presale - Robots.txt
+# Allow all crawlers to access the presale site
 
 User-agent: *
 Allow: /
+
+# Sitemap location (if you have one)
+Sitemap: http://presale.sozopia.org/sitemap.xml
+
+# Specific rules for different user agents
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+# Block access to sensitive areas (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+
+# Allow access to important assets
+Allow: /src/assets/
+Allow: /public/
+Allow: /favicon.ico
+Allow: /robots.txt
+
+# Crawl delay for all bots to be respectful
+Crawl-delay: 1
+
+# Additional meta information
+# Last updated: [Current Date]
+# Contact: [Your Contact Information]
