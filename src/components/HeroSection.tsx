@@ -8,7 +8,7 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { gsap } from "gsap";
 import heroImage from "@/assets/background.png";
 import miniWood from "@/assets/mini_wood.png";
-import woodPattern from "@/assets/woodenPanel.png";
+import woodPattern from "@/assets/woodenPanel.webp";
 import woodButton from "@/assets/woodenBtn.png";
 import bush_round from "@/assets/bush_round.png";
 import character from "@/assets/character.png";
@@ -214,7 +214,7 @@ const HeroSection = () => {
                    transformOrigin: 'top center',
                    animation: 'wind-shake-natural 8s ease-in-out infinite'
                  }}>
-              <img src={woodPattern} alt="woodPattern" className="absolute top-0 left-0 w-full h-full object-cover scale-x-[1.8] scale-y-[2.7]" />
+              <img src={woodPattern} alt="woodPattern" className="absolute scale-x-[1.8] scale-y-[2.7] top-0 left-0 w-[600px] h-auto object-cover " />
               <div className="p-6 translate-y-28">
                 {/* Wooden Header Section */}
                 <div className="text-center mb-6">
